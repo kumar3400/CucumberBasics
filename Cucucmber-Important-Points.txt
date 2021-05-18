@@ -1,0 +1,100 @@
+cucumber project improtant points
+
+1.create maven project and add the cucmber jars from "https://github.com/cucumber/cucumber-java-skeleton/blob/main/pom.xml" to pom.xml
+2.downlaod the cucumber plugin from "install new software " and take the url "https://cucumber.github.io/cucumber-eclipse/update-site/"
+3.dowanload the cucumber plugin snapshot from "install new software"  and take the url from
+"https://github.com/cucumber/cucumber-eclipse-update-site-snapshot" 
+4.
+
+
+
+These are following rules are defined in cucumber for Regular Expressions:
+Two types of Reg Expressions in Cucumber:
+
+1. Regular Expression: [0-9]+, (\\d+)
+2. Cucumber Expression (introduced in 2017) {String}{int}{total}
+
+
+Rules:
+------------------
+1. Step def file will be generating cucumber expression only by default
+2. But you can use regular expression also in step def file 
+3. You can mix both regular and cucumber expression in step definition file means whole class
+4. But you can not mix both expressions in the same step definition method 
+
+
+* @tags can apply for scenario levels cannot apply for when,then,given.
+we can apply for Feature level also
+
+
+*Background:
+----------------
+Occasionally you’ll find yourself repeating the same Given steps in all of the scenarios in a Feature. it should be part of feature file
+
+Since it is repeated in every scenario, this is an indication that those steps are not essential to describe the scenarios; they are incidental details. 
+You can literally move such Given steps to the background, by grouping them under a Background section.
+
+A Background allows you to add some context to the scenarios that follow it. It can contain one or more Given steps,
+which are run before each scenario, but after any Before hooks.
+
+A Background is placed before the first Scenario/Example, at the same level of indentation.
+
+*Hooks:-
+--------
+1.not part of feature file. it can be written in step defenition class or can be written in seperate configurationclass
+
+the hooks are kind of annotations 
+
+setup and teardown
+will be executed before each scenario--@Before
+will be executed after each scenario--@After
+
+@Before
+m1(order = 1)                                                       |
+@Before
+m2(order=2)
+
+@After
+m1(order = 1)
+
+@After
+m1(order = 2)
+
+@BeforeStep -- before each step of the scenario
+@After Step -- After each step of the scenario
+
+Annotate tags with hooks:
+
+@Before("@Smoke")
+
+@Smoke
+Scenario search
+
+@Smoke
+Scenario adv Search
+
+@Regression
+scenario homepage feature
+
+Reports:
+
+1.publish = true use for generate the reports in chrome or any webbrowser
+2. insted of using "publish = true" in every class we can create propertie file and will declare there then it would be exist for classes
+
+monochrome =true used for console data will show order format
+
+
+DataDriven:
+------------
+1.for data driven achieve we need to declare in feature file as "Scenario Outline" and "Examples"
+
+
+
+
+
+
+
+
+
+
+
